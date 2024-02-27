@@ -10,6 +10,7 @@ public class PrintMazePaths {
         int col = sc.nextInt();
         printPath("",row,col);
         System.out.println(pathReturn("",row,col));
+          System.out.println(pathDiagonal("",row,col));
     }
 
     private static void printPath(String s, int row, int col) {
@@ -36,6 +37,24 @@ public class PrintMazePaths {
         }
         if(c>1){
             list.addAll(pathReturn(p+'R',r,c-1));
+        }
+        return list;
+    }
+    private static ArrayList<String> pathDiagonal(String p , int row , int col){
+        if(row==1 && col==1){
+            ArrayList<String> list = new ArrayList<>();
+            list.add(p);
+            return list;
+        }
+        ArrayList<String> list = new ArrayList<>();
+        if(row>1 && col>1){
+            list.addAll(pathDiagonal(p+'D',row-1,col-1));
+        }
+        if(row>1){
+            list.addAll(pathDiagonal(p+'V',row-1,col));
+        }
+        if(col>1){
+            list.addAll(pathReturn(p+'H',row,col-1));
         }
         return list;
     }
