@@ -7,14 +7,18 @@ public class Main {
     // BinaryTree tree = new BinaryTree();
     // tree.populate(sc);
     // tree.display();
-     BST tree = new BST();
-    int[] nums = {5,2,7,1,4,6,9,8,3,10};
-    tree.populate(nums);
+    //  BST tree = new BST();
+    // int[] nums = {5,2,7,1,4,6,9,8,3,10};
+    // tree.populate(nums);
+    // tree.display();
+    // tree.preOrder();
+    // System.out.println();
+    // tree.inOrder();
+    // System.out.println();
+    // tree.postOrder();
+
+     int[] arr = {3,8,6,7,-2,-8,4,9};
+    SegmentTree tree = new SegmentTree(arr);
     tree.display();
-    tree.preOrder();
-    System.out.println();
-    tree.inOrder();
-    System.out.println();
-    tree.postOrder();
   }
 }
